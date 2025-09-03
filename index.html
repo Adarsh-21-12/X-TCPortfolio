@@ -142,8 +142,8 @@
               transition-all duration-500 ease-out transform
               group-hover:scale-105 group-hover:shadow-[0_20px_40px_rgba(255,255,255,0.15),0_0_30px_rgba(255,255,255,0.1)]">
     
-    <!-- Sliding background -->
-    <div class="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+    <!-- Sliding background (start fully hidden, no white line) -->
+    <div class="absolute inset-0 bg-white -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
     
     <!-- Button text -->
     <span class="relative text-white/90 font-semibold transition-colors duration-500 ease-out group-hover:text-accent">
@@ -151,7 +151,7 @@
     </span>
   </div>
 </a>
-
+          
  
             
     
@@ -484,3 +484,4 @@
 </body>
 
 </html>
+
