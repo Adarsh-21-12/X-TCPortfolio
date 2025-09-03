@@ -137,11 +137,21 @@
           Unity game developer and creative engineer bringing 2D & 3D prototypes to life. I blend gameplay, UI/UX, and interactive systems to craft immersive, playful experiences—always exploring, always building.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#projects" class="group">
-            <div class="px-5 py-3 rounded-xl bg-accent/90 hover:bg-accent transition-all shadow-glow">
-              <span class="text-white font-semibold">View Projects</span>
-            </div>
-          </a>
+          <a href="#projects" class="group relative inline-block overflow-hidden rounded-xl">
+  <div class="px-5 py-3 rounded-xl border border-white/20 bg-white/10 backdrop-blur 
+              transition-all duration-500 ease-out transform
+              group-hover:scale-105 group-hover:shadow-[0_20px_40px_rgba(255,255,255,0.15),0_0_30px_rgba(255,255,255,0.1)]">
+    
+    <!-- Sliding background -->
+    <div class="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+    
+    <!-- Button text -->
+    <span class="relative text-white/90 font-semibold transition-colors duration-500 ease-out group-hover:text-accent">
+      View Projects
+    </span>
+  </div>
+</a>
+
  
             
     
@@ -472,4 +482,5 @@
 
   </script>
 </body>
+
 </html>
