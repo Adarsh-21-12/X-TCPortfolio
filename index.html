@@ -30,6 +30,7 @@
                         float: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-8px)' } },
                         shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } }
                     },
+
                     animation: {
                         float: 'float 6s ease-in-out infinite',
                         shimmer: 'shimmer 7s linear infinite'
@@ -76,21 +77,23 @@
 
         /* Subtle dots + lines overlay (faint, non-distracting) */
         /* Subtle dots + lines overlay */
+        /* Stronger dots + lines overlay */
         body::before {
             content: "";
             position: fixed;
             inset: 0;
             background-image:
-                radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-                linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+                radial-gradient(rgba(255, 255, 255, 0.15) 1.2px, transparent 1.2px),
+                linear-gradient(0deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
             background-size: 36px 36px, 40px 40px, 40px 40px;
             background-position: center;
             pointer-events: none;
             z-index: 0;
-            /* keep above the background but below content */
-            opacity: 0.35;
+            opacity: 0.55;
+            /* more visible */
         }
+
 
 
         /* Glass card */
@@ -635,4 +638,3 @@
 </body>
 
 </html>
-
