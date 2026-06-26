@@ -104,7 +104,7 @@
     .glass {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.07);
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(16px);
     }
 
@@ -377,6 +377,25 @@
       display:flex; align-items:flex-end; padding:16px;
     }
     .group:hover .proj-overlay { opacity:1; }
+
+    /* ── Project carousel card hover ── */
+    .proj-card > div {
+      transform-origin: center bottom;
+    }
+    .proj-card:hover > div {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 30px 70px rgba(124,58,237,0.18), 0 0 0 1px rgba(168,85,247,0.25);
+      border-color: rgba(168,85,247,0.3) !important;
+    }
+    /* Arrow hover states */
+    .proj-arrow:hover {
+      background: rgba(124,58,237,0.3) !important;
+      border-color: rgba(168,85,247,0.6) !important;
+      transform: scale(1.08);
+    }
+    .proj-arrow:active { transform: scale(0.95); }
+    /* Dot cursor */
+    .proj-dot { cursor: none; }
   </style>
 </head>
 
@@ -640,96 +659,239 @@
     <!-- ══════════════ PROJECTS ══════════════ -->
     <section id="projects" class="relative py-20">
       <div class="mx-auto max-w-6xl px-4">
-        <div class="eyebrow reveal">Projects</div>
 
-        <div class="grid sm:grid-cols-2 gap-6">
-
-          <!-- Project 1: Horror Game -->
-          <article class="group glass glow-card rounded-2xl overflow-hidden reveal">
-            <!-- Thumbnail -->
-            <div class="relative aspect-video overflow-hidden" style="background:linear-gradient(135deg,#0a0005,#1a0010,#050005);">
-              <div class="absolute inset-0" style="background-image:linear-gradient(rgba(180,0,50,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(180,0,50,0.08) 1px,transparent 1px);background-size:30px 30px;"></div>
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="relative">
-                  <div class="w-20 h-20 rounded-2xl flex items-center justify-center" style="background:rgba(220,0,50,0.12);border:1px solid rgba(220,0,50,0.25);">
-                    <i data-lucide="ghost" class="w-9 h-9" style="color:rgba(255,80,80,0.7)"></i>
-                  </div>
-                  <div class="absolute -inset-2 rounded-2xl" style="border:1px dashed rgba(220,0,50,0.2);animation:spin-slow 20s linear infinite;"></div>
-                </div>
-              </div>
-              <!-- Top badge -->
-              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.6);border:1px solid rgba(220,0,50,0.3);color:rgba(255,100,100,0.9);">
-                🎮 Unity · Horror
-              </div>
-            </div>
-            <div class="p-5">
-              <h3 class="text-white font-semibold text-base mb-1.5">Run B!tch — Horror Game</h3>
-              <p class="text-white/55 text-sm leading-relaxed mb-4">A first-person horror prototype in Unity. Avoid your possessed ex while completing escape missions — stealth, triggers, and atmosphere-driven gameplay.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-                <span class="tag">3D</span>
-              </div>
-              <span class="text-white/25 text-xs italic">Coming soon</span>
-            </div>
-          </article>
-
-          <!-- Project 2: VisionX -->
-          <article class="group glass glow-card rounded-2xl overflow-hidden reveal">
-            <div class="relative aspect-video overflow-hidden" style="background:linear-gradient(135deg,#0a0514,#120828,#080c1e);">
-              <div class="absolute inset-0" style="background-image:linear-gradient(rgba(124,58,237,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,0.12) 1px,transparent 1px);background-size:24px 24px;"></div>
-              <!-- Animated scan line -->
-              <div class="absolute left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,rgba(168,85,247,0.6),transparent);animation:scanLine 3s ease-in-out infinite;top:50%;"></div>
-              <div class="absolute inset-0 flex items-center justify-center gap-8">
-                <div class="flex flex-col items-center gap-2">
-                  <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:rgba(124,58,237,0.2);border:1px solid rgba(168,85,247,0.35);">
-                    <i data-lucide="car" class="w-6 h-6 text-purple-300"></i>
-                  </div>
-                  <span class="text-purple-400/70 text-[10px] font-medium tracking-wider">CAR</span>
-                </div>
-                <div class="flex flex-col items-center gap-1 opacity-50">
-                  <i data-lucide="brain-circuit" class="w-7 h-7 text-white/40"></i>
-                  <div class="flex gap-0.5">
-                    <div class="w-1 h-3 rounded-full bg-purple-500/40" style="animation:barPulse 1.2s ease-in-out infinite 0s"></div>
-                    <div class="w-1 h-3 rounded-full bg-purple-500/40" style="animation:barPulse 1.2s ease-in-out infinite 0.2s"></div>
-                    <div class="w-1 h-3 rounded-full bg-purple-500/40" style="animation:barPulse 1.2s ease-in-out infinite 0.4s"></div>
-                  </div>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                  <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.3);">
-                    <i data-lucide="bike" class="w-6 h-6 text-purple-200"></i>
-                  </div>
-                  <span class="text-purple-300/70 text-[10px] font-medium tracking-wider">BIKE</span>
-                </div>
-              </div>
-              <!-- Live badge -->
-              <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.6);border:1px solid rgba(34,197,94,0.35);color:rgba(74,222,128,0.9);">
-                <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> Live
-              </div>
-              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.6);border:1px solid rgba(168,85,247,0.3);color:rgba(196,132,252,0.9);">
-                🤖 AI / ML
-              </div>
-            </div>
-            <div class="p-5">
-              <h3 class="text-white font-semibold text-base mb-1.5">VisionX — AI Image Classifier</h3>
-              <p class="text-white/55 text-sm leading-relaxed mb-4">Trained a CNN on a large image dataset using Google Colab + TensorFlow/Keras. Classifies any uploaded image as a car or bike. Deployed live on Netlify.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tag tag-accent">TensorFlow</span>
-                <span class="tag">Keras</span>
-                <span class="tag">Python</span>
-                <span class="tag">Google Colab</span>
-                <span class="tag">Netlify</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <a href="https://xtacy-visionx.netlify.app/" target="_blank" rel="noopener" class="btn-primary text-xs py-2 px-4">
-                  <span>Try it Live</span><i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                </a>
-                <span class="text-white/25 text-xs">Private repo</span>
-              </div>
-            </div>
-          </article>
-
+        <!-- Header row -->
+        <div class="flex items-end justify-between mb-8 reveal">
+          <div>
+            <div class="eyebrow" style="margin-bottom:0.5rem">Projects</div>
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-white">Things I've Built</h2>
+          </div>
+          <!-- Arrow controls -->
+          <div class="flex items-center gap-3">
+            <span id="proj-counter" class="text-white/35 text-sm font-medium tabular-nums">1 / 6</span>
+            <button id="proj-prev" aria-label="Previous project"
+              class="proj-arrow w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+              style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+              <i data-lucide="arrow-left" class="w-4 h-4 text-white/60"></i>
+            </button>
+            <button id="proj-next" aria-label="Next project"
+              class="proj-arrow w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+              style="background:rgba(124,58,237,0.2);border:1px solid rgba(168,85,247,0.35);">
+              <i data-lucide="arrow-right" class="w-4 h-4 text-purple-300"></i>
+            </button>
+          </div>
         </div>
+
+        <!-- Carousel viewport -->
+        <div class="proj-viewport reveal" style="overflow:hidden;position:relative;">
+          <!-- Fade edges -->
+          <div style="pointer-events:none;position:absolute;left:0;top:0;bottom:0;width:60px;z-index:5;background:linear-gradient(to right,#030305,transparent);"></div>
+          <div style="pointer-events:none;position:absolute;right:0;top:0;bottom:0;width:60px;z-index:5;background:linear-gradient(to left,#030305,transparent);"></div>
+
+          <div id="proj-track" style="display:flex;gap:1.5rem;transition:transform 0.55s cubic-bezier(.4,0,.2,1);will-change:transform;padding:1.5rem 0.25rem;">
+
+          <!-- ── Card 2: Run B!tch ── -->
+            <article class="proj-card group flex-shrink-0" style="width:340px;">
+              <div class="glass rounded-2xl overflow-hidden h-full" style="border:1px solid rgba(255,255,255,0.07);transition:transform 0.4s cubic-bezier(.2,.9,.2,1),box-shadow 0.4s ease,border-color 0.4s ease;">
+                <div class="relative overflow-hidden" style="height:190px;background:linear-gradient(135deg,#0a0005,#1a0010,#050005);">
+                  <div class="absolute inset-0" style="background-image:linear-gradient(rgba(180,0,50,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(180,0,50,0.08) 1px,transparent 1px);background-size:30px 30px;"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="relative">
+                      <div class="w-20 h-20 rounded-2xl flex items-center justify-center" style="background:rgba(220,0,50,0.12);border:1px solid rgba(220,0,50,0.25);">
+                        <i data-lucide="ghost" class="w-9 h-9" style="color:rgba(255,80,80,0.7)"></i>
+                      </div>
+                      <div class="absolute -inset-2 rounded-2xl" style="border:1px dashed rgba(220,0,50,0.2);animation:spin-slow 20s linear infinite;"></div>
+                    </div>
+                  </div>
+                  <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.6);border:1px solid rgba(220,0,50,0.3);color:rgba(255,100,100,0.9);">🎮 Unity · Horror</div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-white font-semibold text-base mb-1.5">Run B!tch — Horror Game</h3>
+                  <p class="text-white/50 text-sm leading-relaxed mb-4">A first-person horror prototype in Unity. Avoid your possessed ex while completing escape missions — stealth, triggers, atmosphere-driven gameplay.</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">3D</span>
+                  </div>
+                  <span class="text-white/25 text-xs italic">Coming soon</span>
+                </div>
+              </div>
+            </article>
+
+
+            <!-- ── Card 1: Orbital Slingshot ── -->
+            <article class="proj-card group flex-shrink-0" style="width:340px;">
+              <div class="glass rounded-2xl overflow-hidden h-full" style="border:1px solid rgba(255,255,255,0.07);transition:transform 0.4s cubic-bezier(.2,.9,.2,1),box-shadow 0.4s ease,border-color 0.4s ease;">
+                <div class="relative overflow-hidden" style="height:190px;background:linear-gradient(135deg,#020818,#050d2a,#0a0520);">
+                  <!-- Star field -->
+                  <div class="absolute inset-0" id="orbital-stars"></div>
+                  <!-- Grid -->
+                  <div class="absolute inset-0" style="background-image:linear-gradient(rgba(56,189,248,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.06) 1px,transparent 1px);background-size:28px 28px;"></div>
+                  <!-- Orbit ring -->
+                  <div class="absolute" style="width:110px;height:110px;border:1px solid rgba(56,189,248,0.2);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:spin-slow 8s linear infinite;"></div>
+                  <div class="absolute" style="width:70px;height:70px;border:1px dashed rgba(56,189,248,0.12);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:spin-rev 12s linear infinite;"></div>
+                  <!-- Planet -->
+                  <div class="absolute" style="width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#93c5fd,#1d4ed8);box-shadow:0 0 20px rgba(59,130,246,0.5);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+                  <!-- Orbiting dot -->
+                  <div class="absolute" style="width:110px;height:110px;top:50%;left:50%;transform:translate(-50%,-50%);animation:spin-slow 8s linear infinite;">
+                    <div style="width:8px;height:8px;border-radius:50%;background:#38bdf8;box-shadow:0 0 10px #38bdf8;position:absolute;top:-4px;left:50%;transform:translateX(-50%);"></div>
+                  </div>
+                  <!-- Badge -->
+                  <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.65);border:1px solid rgba(56,189,248,0.35);color:rgba(125,211,252,0.95);">🚀 Android · Unity</div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-white font-semibold text-base mb-1.5">Orbital Slingshot</h3>
+                  <p class="text-white/50 text-sm leading-relaxed mb-4">Physics-based Android game where you slingshot a spacecraft around planets using gravitational pull. Smooth controls, satisfying trajectories.</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag tag-accent">Unity</span><span class="tag">C#</span><span class="tag">Android</span><span class="tag">Physics</span>
+                  </div>
+                  <a href="https://xtacy-orbitalslingshot.netlify.app/" target="_blank" rel="noopener" class="btn-primary text-xs py-2 px-4">
+                      <span>Try it</span><i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  </a>
+                  <span class="text-white/25 text-xs italic ml-2">Coming to Play Store</span>
+                </div>
+              </div>
+            </article>
+
+
+            <!-- ── Card 3: VisionX ── -->
+            <article class="proj-card group flex-shrink-0" style="width:340px;">
+              <div class="glass rounded-2xl overflow-hidden h-full" style="border:1px solid rgba(255,255,255,0.07);transition:transform 0.4s cubic-bezier(.2,.9,.2,1),box-shadow 0.4s ease,border-color 0.4s ease;">
+                <div class="relative overflow-hidden" style="height:190px;background:linear-gradient(135deg,#0a0514,#120828,#080c1e);">
+                  <div class="absolute inset-0" style="background-image:linear-gradient(rgba(124,58,237,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,0.12) 1px,transparent 1px);background-size:24px 24px;"></div>
+                  <div class="absolute left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,rgba(168,85,247,0.6),transparent);animation:scanLine 3s ease-in-out infinite;top:50%;"></div>
+                  <div class="absolute inset-0 flex items-center justify-center gap-8">
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:rgba(124,58,237,0.2);border:1px solid rgba(168,85,247,0.35);">
+                        <i data-lucide="car" class="w-6 h-6 text-purple-300"></i>
+                      </div>
+                      <span class="text-purple-400/70 text-[10px] font-medium tracking-wider">CAR</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 opacity-50">
+                      <i data-lucide="brain-circuit" class="w-7 h-7 text-white/40"></i>
+                      <div class="flex gap-0.5">
+                        <div class="w-1 h-3 rounded-full bg-purple-500/40" style="animation:barPulse 1.2s ease-in-out infinite 0s"></div>
+                        <div class="w-1 h-3 rounded-full bg-purple-500/40" style="animation:barPulse 1.2s ease-in-out infinite 0.2s"></div>
+                        <div class="w-1 h-3 rounded-full bg-purple-500/40" style="animation:barPulse 1.2s ease-in-out infinite 0.4s"></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.3);">
+                        <i data-lucide="bike" class="w-6 h-6 text-purple-200"></i>
+                      </div>
+                      <span class="text-purple-300/70 text-[10px] font-medium tracking-wider">BIKE</span>
+                    </div>
+                  </div>
+                  <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.6);border:1px solid rgba(34,197,94,0.35);color:rgba(74,222,128,0.9);">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> Live
+                  </div>
+                  <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.6);border:1px solid rgba(168,85,247,0.3);color:rgba(196,132,252,0.9);">🤖 AI / ML</div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-white font-semibold text-base mb-1.5">VisionX — AI Image Classifier</h3>
+                  <p class="text-white/50 text-sm leading-relaxed mb-4">Trained a CNN on a large image dataset using Google Colab + TensorFlow/Keras. Classifies any uploaded image as a car or bike.</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag tag-accent">TensorFlow</span><span class="tag">Keras</span><span class="tag">Python</span><span class="tag">Colab</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <a href="https://xtacy-visionx.netlify.app/" target="_blank" rel="noopener" class="btn-primary text-xs py-2 px-4">
+                      <span>Try it Live</span><i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <span class="text-white/25 text-xs">Private repo</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ── Card 4: Coming Soon ── -->
+            <article class="proj-card group flex-shrink-0" style="width:340px;">
+              <div class="glass rounded-2xl overflow-hidden h-full" style="border:1px solid rgba(255,255,255,0.07);transition:transform 0.4s cubic-bezier(.2,.9,.2,1),box-shadow 0.4s ease,border-color 0.4s ease;">
+                <div class="relative overflow-hidden" style="height:190px;background:linear-gradient(135deg,#080d08,#0a160a,#050a05);">
+                  <div class="absolute inset-0" style="background-image:linear-gradient(rgba(34,197,94,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(34,197,94,0.06) 1px,transparent 1px);background-size:26px 26px;"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="relative flex flex-col items-center gap-3">
+                      <div class="w-20 h-20 rounded-2xl flex items-center justify-center" style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);">
+                        <i data-lucide="lock" class="w-9 h-9" style="color:rgba(74,222,128,0.5)"></i>
+                      </div>
+                      <span class="text-white/25 text-xs tracking-widest uppercase font-medium">Coming Soon</span>
+                    </div>
+                  </div>
+                  <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.6);border:1px solid rgba(34,197,94,0.2);color:rgba(74,222,128,0.6);">🔒 TBA</div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-white/40 font-semibold text-base mb-1.5">Project #4</h3>
+                  <p class="text-white/25 text-sm leading-relaxed mb-4">This project is still cooking. Something exciting is in the works — check back soon.</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag" style="opacity:0.35;">???</span><span class="tag" style="opacity:0.35;">???</span>
+                  </div>
+                  <span class="text-white/20 text-xs italic">Under development</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- ── Card 5: Coming Soon ── -->
+            <article class="proj-card group flex-shrink-0" style="width:340px;">
+              <div class="glass rounded-2xl overflow-hidden h-full" style="border:1px solid rgba(255,255,255,0.07);transition:transform 0.4s cubic-bezier(.2,.9,.2,1),box-shadow 0.4s ease,border-color 0.4s ease;">
+                <div class="relative overflow-hidden" style="height:190px;background:linear-gradient(135deg,#0d0a04,#1a1005,#0a0800);">
+                  <div class="absolute inset-0" style="background-image:linear-gradient(rgba(251,191,36,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(251,191,36,0.06) 1px,transparent 1px);background-size:22px 22px;"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="relative flex flex-col items-center gap-3">
+                      <div class="w-20 h-20 rounded-2xl flex items-center justify-center" style="background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.18);">
+                        <i data-lucide="zap" class="w-9 h-9" style="color:rgba(253,224,71,0.45)"></i>
+                      </div>
+                      <span class="text-white/25 text-xs tracking-widest uppercase font-medium">Coming Soon</span>
+                    </div>
+                  </div>
+                  <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.6);border:1px solid rgba(251,191,36,0.2);color:rgba(253,224,71,0.55);">⚡ TBA</div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-white/40 font-semibold text-base mb-1.5">Project #5</h3>
+                  <p class="text-white/25 text-sm leading-relaxed mb-4">Big ideas, building blocks already in place. Reveal coming once it's ready to ship.</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag" style="opacity:0.35;">???</span><span class="tag" style="opacity:0.35;">???</span>
+                  </div>
+                  <span class="text-white/20 text-xs italic">Under development</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- ── Card 6: Coming Soon ── -->
+            <article class="proj-card group flex-shrink-0" style="width:340px;">
+              <div class="glass rounded-2xl overflow-hidden h-full" style="border:1px solid rgba(255,255,255,0.07);transition:transform 0.4s cubic-bezier(.2,.9,.2,1),box-shadow 0.4s ease,border-color 0.4s ease;">
+                <div class="relative overflow-hidden" style="height:190px;background:linear-gradient(135deg,#0a0514,#0d0820,#08050f);">
+                  <div class="absolute inset-0" style="background-image:linear-gradient(rgba(244,114,182,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(244,114,182,0.06) 1px,transparent 1px);background-size:20px 20px;"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="relative flex flex-col items-center gap-3">
+                      <div class="w-20 h-20 rounded-2xl flex items-center justify-center" style="background:rgba(244,114,182,0.07);border:1px solid rgba(244,114,182,0.18);">
+                        <i data-lucide="star" class="w-9 h-9" style="color:rgba(249,168,212,0.45)"></i>
+                      </div>
+                      <span class="text-white/25 text-xs tracking-widest uppercase font-medium">Coming Soon</span>
+                    </div>
+                  </div>
+                  <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium" style="background:rgba(0,0,0,0.6);border:1px solid rgba(244,114,182,0.2);color:rgba(249,168,212,0.55);">✨ TBA</div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-white/40 font-semibold text-base mb-1.5">Project #6</h3>
+                  <p class="text-white/25 text-sm leading-relaxed mb-4">The final slot — saved for something worth the wait. Stay tuned.</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag" style="opacity:0.35;">???</span><span class="tag" style="opacity:0.35;">???</span>
+                  </div>
+                  <span class="text-white/20 text-xs italic">Under development</span>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /proj-track -->
+        </div><!-- /proj-viewport -->
+
+        <!-- Dot indicators -->
+        <div class="flex justify-center gap-2 mt-6 reveal">
+          <button class="proj-dot w-6 h-1.5 rounded-full transition-all duration-300" data-idx="0" style="background:rgba(168,85,247,0.9);"></button>
+          <button class="proj-dot w-1.5 h-1.5 rounded-full transition-all duration-300" data-idx="1" style="background:rgba(255,255,255,0.2);"></button>
+          <button class="proj-dot w-1.5 h-1.5 rounded-full transition-all duration-300" data-idx="2" style="background:rgba(255,255,255,0.2);"></button>
+          <button class="proj-dot w-1.5 h-1.5 rounded-full transition-all duration-300" data-idx="3" style="background:rgba(255,255,255,0.2);"></button>
+          <button class="proj-dot w-1.5 h-1.5 rounded-full transition-all duration-300" data-idx="4" style="background:rgba(255,255,255,0.2);"></button>
+          <button class="proj-dot w-1.5 h-1.5 rounded-full transition-all duration-300" data-idx="5" style="background:rgba(255,255,255,0.2);"></button>
+        </div>
+
       </div>
     </section>
 
@@ -1040,6 +1202,74 @@
     document.getElementById('hamburger').addEventListener('click', () => {
       mobileMenu.classList.toggle('open');
     });
+
+    // ── Project carousel
+    (function() {
+      const track    = document.getElementById('proj-track');
+      const prevBtn  = document.getElementById('proj-prev');
+      const nextBtn  = document.getElementById('proj-next');
+      const counter  = document.getElementById('proj-counter');
+      const dots     = document.querySelectorAll('.proj-dot');
+      const cards    = document.querySelectorAll('.proj-card');
+      const TOTAL    = cards.length;
+      let current    = 0;
+
+      function getCardWidth() {
+        if (!cards[0]) return 340;
+        const style = window.getComputedStyle(track);
+        const gap   = parseFloat(style.gap) || 24;
+        return cards[0].offsetWidth + gap;
+      }
+
+      function goTo(idx) {
+        current = Math.max(0, Math.min(idx, TOTAL - 1));
+        const offset = current * getCardWidth();
+        track.style.transform = `translateX(-${offset}px)`;
+
+        // Counter
+        counter.textContent = `${current + 1} / ${TOTAL}`;
+
+        // Dots
+        dots.forEach((d, i) => {
+          if (i === current) {
+            d.style.background = 'rgba(168,85,247,0.9)';
+            d.style.width = '24px';
+          } else {
+            d.style.background = 'rgba(255,255,255,0.2)';
+            d.style.width = '6px';
+          }
+        });
+
+        // Arrow states
+        prevBtn.style.opacity = current === 0 ? '0.35' : '1';
+        nextBtn.style.opacity = current === TOTAL - 1 ? '0.35' : '1';
+      }
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+      dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.idx)));
+
+      // Keyboard
+      document.addEventListener('keydown', e => {
+        const sec = document.getElementById('projects');
+        const r   = sec.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) {
+          if (e.key === 'ArrowRight') goTo(current + 1);
+          if (e.key === 'ArrowLeft')  goTo(current - 1);
+        }
+      });
+
+      // Swipe / drag
+      let startX = 0;
+      track.addEventListener('pointerdown', e => { startX = e.clientX; });
+      track.addEventListener('pointerup',   e => {
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) dx < 0 ? goTo(current + 1) : goTo(current - 1);
+      });
+
+      goTo(0);
+      window.addEventListener('resize', () => goTo(current));
+    })();
 
     // ── Formspree contact
     const form       = document.getElementById('contact-form');
